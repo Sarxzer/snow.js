@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="snow.js"></script>
+
+    <style>
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            pointer-events: none;
+            color: #ffffff;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+
+    <script>
+        snow(50);
+    </script>
+</body>
+</html>
