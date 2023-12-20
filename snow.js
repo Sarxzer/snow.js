@@ -1,4 +1,4 @@
-function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5, ) {
+function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
   document.body.innerHTML += '<div id="snow"></div>'
   const flakes = ["❅","❆","❄"]
   for (let i = 0; i < ammount; i++) {
@@ -23,7 +23,7 @@ function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5, ) {
 
     flake.style.left = `${startingX}px`;
     flake.style.fontSize = `${size}px`;
-    flake.style.animation = `fall ${driftDuration}s linear infinite`;
+    flake.style.animation = `snowfall ${driftDuration}s linear infinite`;
     flake.style.animationDelay = `-${driftDelay}s`;
   });
 }
