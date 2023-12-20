@@ -19,7 +19,7 @@ function snow(ammount) {
       flake.style.cursor = 'default';
       flake.style.pointerEvent =  'none';
       flake.style.color = '#ffffff';
-      flake.style.position = 'sticky';
+      flake.style.position = 'absolute';
       
 
       flake.style.left = `${startingX}px`;
