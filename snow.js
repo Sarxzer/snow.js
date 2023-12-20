@@ -1,13 +1,13 @@
-function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
-  document.body.innerHTML += '<div id="snow"></div>'
+function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) { // ammount, minSize, maxSize, minSpeed, maxSpeed
+  document.body.innerHTML += '<div id="snow"></div>' // Add snow to body
 
   const flakes = ["❅","❆","❄","*","❉"]
-  for (let i = 0; i < ammount; i++) {
-      car = flakes[Math.floor(Math.random() * flakes.length)];
-      document.getElementById('snow').innerHTML += `<div class="snowflake">${car}</div>`;
+  for (let i = 0; i < ammount; i++) { // Create snowflakes
+      car = flakes[Math.floor(Math.random() * flakes.length)]; // Random snowflake
+      document.getElementById('snow').innerHTML += `<div class="snowflake">${car}</div>`; // Add snowflake to snow
   }
-  const snowflakes = document.querySelectorAll(".snowflake");
-  snowflakes.forEach((flake) => {
+  const snowflakes = document.querySelectorAll(".snowflake"); // Select all snowflakes
+  snowflakes.forEach((flake) => { // For each snowflake
     const driftDuration = Math.random() * (maxSpeed - minSpeed) + minSpeed; // Time from 5s to 15s
     const driftDelay = Math.random() * 5; // Wait time from 0s to 5s
     const startingX = Math.random() * window.innerWidth; // Ramdom horizontal position
@@ -16,18 +16,18 @@ function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
     const speed = parseInt(Math.random() * 3); // Speed from 1 to 4 
     const zIndex = parseInt(-1 + Math.random() * 2147483648); // Random zIndex from -1 to 2147483647
 
-    flake.style.position = 'fixed';
-    flake.style.top = '-10px';
-    flake.style.userSelect = 'none';
-    flake.style.cursor = 'default';
-    flake.style.pointerEvent = 'none';
-    flake.style.color = `#${color}${color}ff`;
-
-
-    flake.style.left = `${startingX}px`;
-    flake.style.fontSize = `${size}px`;
-    flake.style.zIndex = zIndex;
-    flake.style.animation = `snowfall-speed${speed} ${driftDuration}s linear infinite`;
-    flake.style.animationDelay = `-${driftDelay}s`;
+    flake.style.position = 'fixed'; // Fixed position
+    flake.style.top = '-10px'; // Start from top
+    flake.style.userSelect = 'none'; // Disable selection
+    flake.style.cursor = 'default'; // Default cursor
+    flake.style.pointerEvent = 'none'; // Disable pointer events
+    
+    
+    flake.style.color = `#${color}${color}ff`; // Set color (blueish)
+    flake.style.left = `${startingX}px`; // Set horizontal position
+    flake.style.fontSize = `${size}px`; // Set size
+    flake.style.zIndex = zIndex; // Set zIndex (for overlapping and underlapping)
+    flake.style.animation = `snowfall-speed${speed} ${driftDuration}s linear infinite`; // Set animation speed and duration
+    flake.style.animationDelay = `-${driftDelay}s`; // Set animation delay (for random start)
   });
 }
