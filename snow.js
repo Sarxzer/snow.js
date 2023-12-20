@@ -1,5 +1,7 @@
 function snow(ammount, zIndex=9999999999,  minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
   document.body.innerHTML += '<div id="snow"></div>'
+  document.getElementById('snow').style.zIndex = zIndex;
+  
   const flakes = ["❅","❆","❄","*","❉"]
   for (let i = 0; i < ammount; i++) {
       car = flakes[Math.floor(Math.random() * flakes.length)];
@@ -16,7 +18,6 @@ function snow(ammount, zIndex=9999999999,  minSize=10, maxSize=25, minSpeed=15, 
 
     flake.style.position = 'fixed';
     flake.style.top = '-10px';
-    flake.style.zIndex = zIndex;
     flake.style.userSelect = 'none';
     flake.style.cursor = 'default';
     flake.style.pointerEvent = 'none';
