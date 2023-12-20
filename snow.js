@@ -1,7 +1,6 @@
-function snow(ammount, zIndex=9999999999,  minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
+function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) {
   document.body.innerHTML += '<div id="snow"></div>'
-  document.getElementById('snow').style.zIndex = zIndex;
-  
+
   const flakes = ["❅","❆","❄","*","❉"]
   for (let i = 0; i < ammount; i++) {
       car = flakes[Math.floor(Math.random() * flakes.length)];
@@ -15,6 +14,7 @@ function snow(ammount, zIndex=9999999999,  minSize=10, maxSize=25, minSpeed=15, 
     const size = Math.random() * (maxSize - minSize) + minSize; // Size from 5px to 15px
     const color = parseInt(255-Math.random()*50).toString(16); // Random color from 0xffff00 to 0xffffff
     const speed = parseInt(Math.random() * 3); // Speed from 1 to 4 
+    const zIndex = parseInt(-1 + Math.random() * 2147483648); // Random zIndex from -1 to 2147483647
 
     flake.style.position = 'fixed';
     flake.style.top = '-10px';
@@ -26,6 +26,7 @@ function snow(ammount, zIndex=9999999999,  minSize=10, maxSize=25, minSpeed=15, 
 
     flake.style.left = `${startingX}px`;
     flake.style.fontSize = `${size}px`;
+    flake.style.zIndex = zIndex;
     flake.style.animation = `snowfall-speed${speed} ${driftDuration}s linear infinite`;
     flake.style.animationDelay = `-${driftDelay}s`;
   });
