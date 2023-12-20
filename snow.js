@@ -1,7 +1,7 @@
 function snow(ammount, minSize=10, maxSize=25, minSpeed=15, maxSpeed=5) { // ammount, minSize, maxSize, minSpeed, maxSpeed
   document.body.innerHTML += '<div id="snow"></div>' // Add snow to body
 
-  const flakes = ["❅","❆","❄","*","❉"]
+  const flakes = ["❅","❆","❄","*","❉"] // Snowflakes
   for (let i = 0; i < ammount; i++) { // Create snowflakes
       car = flakes[Math.floor(Math.random() * flakes.length)]; // Random snowflake
       document.getElementById('snow').innerHTML += `<div class="snowflake">${car}</div>`; // Add snowflake to snow
