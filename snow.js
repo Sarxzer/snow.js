@@ -14,7 +14,7 @@ function snow(ammount) {
       const size = Math.random() * 10 + 5; // Taille de 5 à 15 pixels
         
       flake.style.top = '-10px';
-      flake.styke.zIndex = '9999';
+      flake.style.zIndex = '9999';
       flake.style.userSelect = 'none';
       flake.style.cursor = 'default';
       flake.style.pointerEvent =  'none';
